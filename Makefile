@@ -22,7 +22,7 @@ PROGRAM = procrank
 LOCAL_CFLAGS := -Wall
 
 $(PROGRAM): $(PROGRAM).c libpagemap/libpagemap.a
-	$(CROSS_COMPILE)gcc $(LOCAL_CFLAGS) $(PROGRAM).c -Ilibpagemap/include -Llibpagemap -lpagemap -o procrank
+	$(CROSS_COMPILE)gcc $(LOCAL_CFLAGS) $(PROGRAM).c -D_GNU_SOURCE -Ilibpagemap/include -Llibpagemap -lpagemap -o procrank
 
 libpagemap/libpagemap.a:
 	make -C libpagemap
